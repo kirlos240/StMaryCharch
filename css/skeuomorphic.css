@@ -1,21 +1,22 @@
 /* ===================================================================
    كنيسة السيدة العذراء مريم بشبين الكوم
-   تصميم وبرمجة: MINA SAMUEL
    النظام الشامل لتصميم السكيومورفيزم الفاخر (Skeuomorphic Design System)
    =================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&family=Cinzel:wght@600;700;900&display=swap');
 
 :root {
-  /* الوضع النهاري (Light Mode) - عاجي، رخام دافئ، جلد ملكي وذهب عتيق */
-  --bg-main: #f3efe6;
-  --bg-gradient: radial-gradient(circle at 50% 20%, #fbf8f2 0%, #ebe2d2 60%, #ded2bc 100%);
-  --panel-bg: linear-gradient(145deg, #fbf7f0 0%, #ede3d1 100%);
-  --panel-bg-hover: linear-gradient(145deg, #ffffff 0%, #f1e7d7 100%);
+  /* ===============================================================
+     الوضع النهاري (Light Mode) - عاج كنسي دافئ، رخام وذهب عتيق
+     =============================================================== */
+  --bg-main: #f5f1e8;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #fdfbf7 0%, #ede5d4 65%, #ded3be 100%);
+  --panel-bg: linear-gradient(145deg, #fdfaf4 0%, #ebe0ce 100%);
+  --panel-bg-hover: linear-gradient(145deg, #ffffff 0%, #f3e9da 100%);
   --inset-bg: #e2d7c3;
   --inset-shadow: inset 3px 3px 6px #c4b9a3, inset -3px -3px 6px #ffffff;
   --card-shadow: 6px 6px 14px rgba(166, 150, 128, 0.5), -6px -6px 14px rgba(255, 255, 255, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.8), inset -1px -1px 2px rgba(0, 0, 0, 0.08);
-  --card-shadow-hover: 9px 9px 20px rgba(166, 150, 128, 0.65), -9px -9px 20px rgba(255, 255, 255, 1), inset 1px 1px 2px rgba(255, 255, 255, 0.9);
+  --card-shadow-hover: 9px 9px 22px rgba(166, 150, 128, 0.65), -9px -9px 22px rgba(255, 255, 255, 1), inset 1px 1px 2px rgba(255, 255, 255, 0.9);
   
   --primary-burgundy: #6c1322;
   --primary-burgundy-light: #8e1f32;
@@ -28,17 +29,17 @@
   --gold-border: linear-gradient(to bottom right, #f4d989, #9c6c1f, #fbf1c7, #855b17);
   
   --text-primary: #2a221b;
-  --text-secondary: #635345;
-  --text-muted: #887463;
-  --text-emboss: 0 1px 1px rgba(255, 255, 255, 0.8), 0 -1px 1px rgba(0, 0, 0, 0.2);
+  --text-secondary: #5e4f42;
+  --text-muted: #8a7868;
+  --text-emboss: 0 1px 1px rgba(255, 255, 255, 0.8), 0 -1px 1px rgba(0, 0, 0, 0.15);
   --text-deboss: 0 1px 1px rgba(255, 255, 255, 0.7);
 
-  --btn-bg: linear-gradient(145deg, #f5ebd9, #dcd0bc);
-  --btn-shadow: 4px 4px 8px #bdae98, -4px -4px 8px #ffffff, inset 1px 1px 1px #ffffff, inset -1px -1px 1px #9f917c;
+  --btn-bg: linear-gradient(145deg, #f7eee0, #ddcfba);
+  --btn-shadow: 4px 4px 8px #baa992, -4px -4px 8px #ffffff, inset 1px 1px 1px #ffffff, inset -1px -1px 1px #9f917c;
   --btn-pressed: inset 3px 3px 6px #af9e87, inset -3px -3px 6px #ffffff;
 
-  --border-rim: rgba(255, 255, 255, 0.65);
-  --border-dark: rgba(90, 70, 50, 0.2);
+  --border-rim: rgba(255, 255, 255, 0.7);
+  --border-dark: rgba(90, 70, 50, 0.18);
   
   --frame-wood: linear-gradient(135deg, #421e10 0%, #2b1208 40%, #522716 70%, #250e05 100%);
   --frame-gold-bevel: inset 2px 2px 3px #ffeaa7, inset -2px -2px 3px #63430c;
@@ -49,53 +50,56 @@
 }
 
 [data-theme="dark"] {
-  /* الوضع الليلي (Dark Mode) - أبنوس ملكي، شاشات نحاسية وفحم مذهب */
-  --bg-main: #110e13;
-  --bg-gradient: radial-gradient(circle at 50% 20%, #1e1722 0%, #110e13 60%, #09070a 100%);
-  --panel-bg: linear-gradient(145deg, #1b1620 0%, #131017 100%);
-  --panel-bg-hover: linear-gradient(145deg, #241d2a 0%, #17131c 100%);
-  --inset-bg: #0b090d;
-  --inset-shadow: inset 3px 3px 6px #050406, inset -3px -3px 6px #241d2b;
-  --card-shadow: 6px 6px 16px rgba(0, 0, 0, 0.75), -5px -5px 12px rgba(45, 34, 53, 0.25), inset 1px 1px 1px rgba(234, 194, 116, 0.15), inset -1px -1px 1px rgba(0, 0, 0, 0.8);
-  --card-shadow-hover: 8px 8px 24px rgba(0, 0, 0, 0.9), -6px -6px 16px rgba(62, 47, 74, 0.35), inset 1px 1px 2px rgba(234, 194, 116, 0.3);
+  /* ===============================================================
+     الوضع الليلي الفاخر (Dark Mode) - أبنوس ملكي متوازن وعالي التباين
+     =============================================================== */
+  --bg-main: #141218;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #221c28 0%, #141218 65%, #0b090e 100%);
+  --panel-bg: linear-gradient(145deg, #1f1a26 0%, #15121b 100%);
+  --panel-bg-hover: linear-gradient(145deg, #282131 0%, #191520 100%);
+  --inset-bg: #0b090e;
+  --inset-shadow: inset 3px 3px 6px #030205, inset -3px -3px 6px #241d2c;
+  --card-shadow: 8px 8px 22px rgba(0, 0, 0, 0.85), -5px -5px 15px rgba(35, 28, 42, 0.35), inset 1px 1px 1px rgba(245, 197, 99, 0.25), inset -1px -1px 1px rgba(0, 0, 0, 0.9);
+  --card-shadow-hover: 10px 10px 28px rgba(0, 0, 0, 0.95), -6px -6px 18px rgba(50, 39, 61, 0.5), inset 1px 1px 2px rgba(255, 220, 130, 0.4);
 
-  --primary-burgundy: #a12437;
-  --primary-burgundy-light: #bf344b;
-  --primary-burgundy-dark: #64111f;
+  --primary-burgundy: #d84b5f;
+  --primary-burgundy-light: #ea6578;
+  --primary-burgundy-dark: #8e1f30;
 
-  --gold-primary: #e0aa48;
-  --gold-light: #fff0bd;
-  --gold-dark: #9e7225;
-  --gold-gradient: linear-gradient(135deg, #f3cf7a 0%, #fff2cb 45%, #e0aa48 70%, #9e7225 100%);
-  --gold-border: linear-gradient(to bottom right, #f7d988, #7a5518, #faeeb5, #573a0e);
+  --gold-primary: #f0be53;
+  --gold-light: #fff2cc;
+  --gold-dark: #aa7a20;
+  --gold-gradient: linear-gradient(135deg, #ffd875 0%, #fff7db 40%, #f0be53 70%, #aa7a20 100%);
+  --gold-border: linear-gradient(to bottom right, #ffd875, #8c6014, #fff2c4, #573a0a);
 
-  --text-primary: #f2ece4;
-  --text-secondary: #c2b5a5;
-  --text-muted: #8c8072;
-  --text-emboss: 0 1px 2px rgba(0, 0, 0, 0.9), 0 -1px 0 rgba(255, 255, 255, 0.1);
+  --text-primary: #f7f3ec;
+  --text-secondary: #d3c7b7;
+  --text-muted: #9c8e7e;
+  --text-emboss: 0 1px 2px rgba(0, 0, 0, 0.95), 0 -1px 0 rgba(255, 255, 255, 0.12);
   --text-deboss: 0 -1px 1px rgba(0, 0, 0, 0.9);
 
-  --btn-bg: linear-gradient(145deg, #251d2a, #16121a);
-  --btn-shadow: 4px 4px 10px #08060a, -3px -3px 8px #2b2133, inset 1px 1px 1px rgba(255, 220, 140, 0.15), inset -1px -1px 1px rgba(0, 0, 0, 0.6);
-  --btn-pressed: inset 3px 3px 6px #08060a, inset -3px -3px 6px #271f2f;
+  --btn-bg: linear-gradient(145deg, #271f2d, #17131b);
+  --btn-shadow: 4px 4px 10px #060508, -3px -3px 8px #2c2235, inset 1px 1px 1px rgba(245, 197, 99, 0.25), inset -1px -1px 1px rgba(0, 0, 0, 0.7);
+  --btn-pressed: inset 3px 3px 6px #060508, inset -3px -3px 6px #241c2c;
 
-  --border-rim: rgba(230, 185, 105, 0.2);
-  --border-dark: rgba(0, 0, 0, 0.6);
+  --border-rim: rgba(245, 197, 99, 0.25);
+  --border-dark: rgba(0, 0, 0, 0.8);
 
-  --frame-wood: linear-gradient(135deg, #1f110c 0%, #120906 40%, #29150f 70%, #0d0604 100%);
-  --frame-gold-bevel: inset 2px 2px 3px #f7cf72, inset -2px -2px 3px #472b05;
+  --frame-wood: linear-gradient(135deg, #26150e 0%, #130a06 40%, #301a12 70%, #0d0603 100%);
+  --frame-gold-bevel: inset 2px 2px 3px #ffd875, inset -2px -2px 3px #543405;
 
-  --switch-track: #0c0a0e;
-  --switch-shadow: inset 3px 3px 6px #030204, inset -2px -2px 5px #261e2c;
-  --switch-thumb: linear-gradient(145deg, #302637, #19141e);
+  --switch-track: #09070c;
+  --switch-shadow: inset 3px 3px 6px #020104, inset -2px -2px 5px #261d2d;
+  --switch-thumb: linear-gradient(145deg, #35283e, #1b1521);
 }
 
-/* Base Styles */
+/* ===================================================================
+   BASE STYLES
+   =================================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -117,7 +121,6 @@ body {
   transition: background 0.35s ease, color 0.35s ease;
 }
 
-/* Background Subtle Canvas Texture */
 body::before {
   content: "";
   position: fixed;
@@ -125,11 +128,11 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.035;
+  opacity: 0.03;
   pointer-events: none;
   background-image: radial-gradient(black 15%, transparent 16%), radial-gradient(white 15%, transparent 16%);
-  background-size: 12px 12px;
-  background-position: 0 0, 6px 6px;
+  background-size: 14px 14px;
+  background-position: 0 0, 7px 7px;
   z-index: 0;
 }
 
@@ -143,16 +146,17 @@ body::before {
 }
 
 /* ===================================================================
-   SKEUOMORPHIC HEADER
+   HEADER & NATURAL CLEAN LOGO (NO CONFINING BOX / NO GLARE)
    =================================================================== */
 .skeuo-header {
   position: sticky;
   top: 0;
   z-index: 100;
   background: var(--panel-bg);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12), inset 0 -2px 0 var(--gold-primary), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12), inset 0 -2px 0 var(--gold-primary), inset 0 1px 1px rgba(255, 255, 255, 0.5);
   border-bottom: 2px solid rgba(184, 134, 11, 0.25);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   padding: 0.75rem 0;
   transition: all 0.3s ease;
 }
@@ -161,57 +165,82 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .header-brand {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
   text-decoration: none;
   color: inherit;
 }
 
-.brand-logo-frame {
-  width: 62px;
-  height: 62px;
-  border-radius: 14px;
-  background: var(--btn-bg);
-  box-shadow: var(--btn-shadow);
-  padding: 4px;
-  display: flex;
+/* ===================================================================
+   SKEUOMORPHIC EMBOSSED LOGO PLAQUE (Header & Footer)
+   "علي قد اللوجو" - Proportional widescreen rectangle with luxurious tactile depth
+   =================================================================== */
+.brand-logo-frame,
+.footer-logo-frame {
+  height: 64px;
+  padding: 6px 14px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  transition: transform 0.25s ease;
   flex-shrink: 0;
+  border-radius: 16px;
+  background: var(--panel-bg);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    4px 4px 12px rgba(166, 150, 128, 0.45),
+    -4px -4px 10px rgba(255, 255, 255, 0.95),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.9),
+    inset -1px -1px 2px rgba(140, 96, 25, 0.18);
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.brand-logo-frame:hover {
-  transform: scale(1.04);
+[data-theme="dark"] .brand-logo-frame,
+[data-theme="dark"] .footer-logo-frame {
+  background: linear-gradient(145deg, #241d2a 0%, #15111b 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    5px 5px 16px rgba(0, 0, 0, 0.85),
+    -3px -3px 9px rgba(45, 35, 55, 0.4),
+    inset 1px 1px 2px rgba(255, 220, 130, 0.35),
+    inset -1px -1px 2px rgba(0, 0, 0, 0.85);
 }
 
-.brand-logo-frame::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 45%;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.45), rgba(255,255,255,0));
-  border-radius: 12px 12px 0 0;
-  pointer-events: none;
+.brand-logo-frame:hover,
+.footer-logo-frame:hover {
+  transform: translateY(-1px) scale(1.02);
 }
 
-.brand-logo {
-  max-width: 100%;
-  max-height: 100%;
+.brand-logo,
+.footer-logo {
+  height: 100%;
+  width: auto;
+  aspect-ratio: 1024 / 558;
   object-fit: contain;
-  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
 }
 
+.logo-dark {
+  display: none !important;
+}
+.logo-light {
+  display: block !important;
+}
+
+[data-theme="dark"] .logo-dark {
+  display: block !important;
+  filter: drop-shadow(0 0 10px rgba(240, 190, 83, 0.5));
+}
+[data-theme="dark"] .logo-light {
+  display: none !important;
+}
+
+/* Brand Text Block */
 .brand-title-wrap {
   display: flex;
   flex-direction: column;
@@ -254,12 +283,12 @@ body::before {
   gap: 0.85rem;
 }
 
-/* Nav Links Button */
+/* Nav Link Button */
 .nav-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.55rem 1.1rem;
+  padding: 0.55rem 1.15rem;
   border-radius: 30px;
   background: var(--btn-bg);
   box-shadow: var(--btn-shadow);
@@ -283,11 +312,15 @@ body::before {
   box-shadow: var(--btn-pressed);
 }
 
-/* 3D Skeuomorphic Theme Switch (Rocker physical switch) */
+.nav-btn .cross {
+  color: var(--gold-primary);
+  font-weight: 900;
+}
+
+/* 3D Physical Rocker Theme Switch */
 .theme-switch-wrap {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
 }
 
 .theme-switch {
@@ -315,11 +348,11 @@ body::before {
 }
 
 .icon-sun {
-  filter: drop-shadow(0 0 2px #f39c12);
+  filter: drop-shadow(0 0 3px #f39c12);
 }
 
 .icon-moon {
-  filter: drop-shadow(0 0 3px #f1c40f);
+  filter: drop-shadow(0 0 4px #ffd875);
 }
 
 .theme-switch-slider {
@@ -330,7 +363,7 @@ body::before {
   height: 30px;
   background: var(--switch-thumb);
   border-radius: 50%;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35), inset 1px 1px 2px rgba(255, 255, 255, 0.8), inset -1px -1px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35), inset 1px 1px 2px rgba(255, 255, 255, 0.8), inset -1px -1px 2px rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.3);
   transition: transform 0.35s cubic-bezier(0.68, -0.35, 0.265, 1.35);
   z-index: 2;
@@ -345,7 +378,7 @@ body::before {
   height: 8px;
   border-radius: 50%;
   background: var(--gold-primary);
-  box-shadow: 0 0 5px var(--gold-light);
+  box-shadow: 0 0 6px var(--gold-light);
 }
 
 [data-theme="dark"] .theme-switch-slider {
@@ -353,7 +386,7 @@ body::before {
 }
 
 /* ===================================================================
-   HERO / WELCOME BANNER
+   HERO BANNER
    =================================================================== */
 .hero-section {
   padding: 2.5rem 0 1.5rem;
@@ -389,10 +422,30 @@ body::before {
   border: 3px solid var(--gold-primary);
   pointer-events: none;
 }
-.hero-corner.tl { top: 12px; left: 12px; border-right: none; border-bottom: none; }
-.hero-corner.tr { top: 12px; right: 12px; border-left: none; border-bottom: none; }
-.hero-corner.bl { bottom: 12px; left: 12px; border-right: none; border-top: none; }
-.hero-corner.br { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+.hero-corner.tl {
+  top: 12px;
+  left: 12px;
+  border-right: none;
+  border-bottom: none;
+}
+.hero-corner.tr {
+  top: 12px;
+  right: 12px;
+  border-left: none;
+  border-bottom: none;
+}
+.hero-corner.bl {
+  bottom: 12px;
+  left: 12px;
+  border-right: none;
+  border-top: none;
+}
+.hero-corner.br {
+  bottom: 12px;
+  right: 12px;
+  border-left: none;
+  border-top: none;
+}
 
 .hero-tag {
   display: inline-flex;
@@ -426,7 +479,6 @@ body::before {
   line-height: 1.8;
 }
 
-/* Quick Filter Skeuomorphic Tabs */
 .filter-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -463,7 +515,7 @@ body::before {
 }
 
 /* ===================================================================
-   GALLERY GRID (HOMEPAGE)
+   GALLERY SECTION (HOMEPAGE)
    =================================================================== */
 .gallery-section {
   padding: 1.5rem 0 4rem;
@@ -516,14 +568,12 @@ body::before {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* 11-Card Responsive Grid */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 2rem;
 }
 
-/* Individual Skeuomorphic Card */
 .story-card {
   background: var(--panel-bg);
   box-shadow: var(--card-shadow);
@@ -544,7 +594,6 @@ body::before {
   background: var(--panel-bg-hover);
 }
 
-/* Card Image Box with Royal Beveled Mat */
 .card-img-wrap {
   position: relative;
   width: 100%;
@@ -566,7 +615,6 @@ body::before {
   transform: scale(1.06);
 }
 
-/* Glare & Vignette Overlay */
 .card-img-wrap::after {
   content: "";
   position: absolute;
@@ -599,6 +647,7 @@ body::before {
   left: 12px;
   z-index: 2;
   background: rgba(18, 14, 20, 0.85);
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   color: #ffd700;
   font-size: 0.75rem;
@@ -635,6 +684,11 @@ body::before {
   gap: 4px;
 }
 
+.card-era-badge {
+  color: var(--gold-primary);
+  font-size: 0.78rem;
+}
+
 .card-title {
   font-size: 1.25rem;
   font-weight: 800;
@@ -649,14 +703,12 @@ body::before {
   color: var(--text-secondary);
   line-height: 1.65;
   margin-bottom: 1.2rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+  height: 4.95em;
   overflow: hidden;
+  text-overflow: ellipsis;
   flex-grow: 1;
 }
 
-/* Card Skeuomorphic Action Button */
 .card-action-btn {
   display: flex;
   align-items: center;
@@ -689,13 +741,12 @@ body::before {
 }
 
 /* ===================================================================
-   DEDICATED STORY DETAIL PAGE STYLES
+   DETAIL PAGE STYLES
    =================================================================== */
 .detail-main {
   padding: 2rem 0 4rem;
 }
 
-/* Story Navigation Breadcrumb & Quick Selector */
 .detail-top-nav {
   display: flex;
   align-items: center;
@@ -773,6 +824,11 @@ body::before {
   border: 3px solid #7c4c16;
 }
 
+[data-theme="dark"] .skeuo-royal-frame {
+  border-color: #aa7a20;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.85), 0 0 15px rgba(240, 190, 83, 0.15);
+}
+
 .skeuo-inner-gold-mat {
   background: var(--gold-border);
   padding: 8px;
@@ -797,7 +853,6 @@ body::before {
   transition: transform 0.4s ease;
 }
 
-/* Glare & Reflection across the glass */
 .skeuo-canvas-mat::before {
   content: "";
   position: absolute;
@@ -810,7 +865,6 @@ body::before {
   z-index: 2;
 }
 
-/* Floating Inspect Button */
 .frame-action-bar {
   display: flex;
   align-items: center;
@@ -849,7 +903,7 @@ body::before {
 }
 
 /* ===================================================================
-   STORY DESCRIPTION & CONTEMPLATION PANEL
+   STORY DETAILS & CONTEMPLATION
    =================================================================== */
 .story-details-box {
   background: var(--panel-bg);
@@ -904,7 +958,13 @@ body::before {
   line-height: 1.3;
 }
 
-/* Golden Verse Plaque (Skeuomorphic embossed metal plaque) */
+.church-subtitle-detail {
+  font-size: 1.05rem;
+  margin-top: 0.4rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
 .golden-verse-plaque {
   background: var(--panel-bg);
   box-shadow: var(--card-shadow);
@@ -942,7 +1002,6 @@ body::before {
   text-align: left;
 }
 
-/* Story Narrative Text Blocks */
 .narrative-block {
   margin-bottom: 2rem;
 }
@@ -970,7 +1029,6 @@ body::before {
   text-align: justify;
 }
 
-/* Practical Lessons Plaque */
 .lessons-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -1012,7 +1070,7 @@ body::before {
 }
 
 /* ===================================================================
-   SKEUOMORPHIC VIDEO THEATRE (تحت الوصف مباشرة)
+   SKEUOMORPHIC VIDEO THEATRE
    =================================================================== */
 .video-section {
   margin-top: 1.5rem;
@@ -1075,7 +1133,6 @@ body::before {
   color: var(--gold-primary);
 }
 
-/* Television / Monitor Bezel */
 .tv-bezel {
   background: linear-gradient(145deg, #2b252d 0%, #17131a 100%);
   border-radius: 18px;
@@ -1087,7 +1144,7 @@ body::before {
 .tv-screen-container {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 ratio */
+  padding-bottom: 56.25%;
   background: #000;
   border-radius: 10px;
   overflow: hidden;
@@ -1103,7 +1160,6 @@ body::before {
   border: none;
 }
 
-/* Skeuomorphic TV Console Controls */
 .tv-console-bar {
   display: flex;
   align-items: center;
@@ -1159,7 +1215,7 @@ body::before {
 }
 
 /* ===================================================================
-   BOTTOM STORIES NAVIGATION
+   BOTTOM NAVIGATION
    =================================================================== */
 .bottom-nav-card {
   background: var(--panel-bg);
@@ -1219,14 +1275,14 @@ body::before {
 }
 
 /* ===================================================================
-   SKEUOMORPHIC FOOTER (MINA SAMUEL)
+   FOOTER (All Text Restored & Pure Logo)
    =================================================================== */
 .skeuo-footer {
   margin-top: auto;
   background: var(--panel-bg);
   box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12), inset 0 2px 0 var(--gold-primary), inset 0 -1px 2px rgba(255, 255, 255, 0.4);
   border-top: 2px solid rgba(184, 134, 11, 0.25);
-  padding: 2.5rem 0 1.8rem;
+  padding: 2.2rem 0 1.8rem;
   position: relative;
 }
 
@@ -1235,94 +1291,46 @@ body::before {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 1.4rem;
+  gap: 1.2rem;
 }
 
 .footer-logo-wrap {
   display: flex;
   align-items: center;
-  gap: 1rem;
-}
-
-.footer-logo-frame {
-  width: 58px;
-  height: 58px;
-  border-radius: 12px;
-  background: var(--btn-bg);
-  box-shadow: var(--btn-shadow);
-  padding: 4px;
-  display: flex;
-  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
-.footer-logo {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+
+
+.footer-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .footer-church-title {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 900;
   color: var(--text-primary);
   text-shadow: var(--text-emboss);
 }
 
-/* MINA SAMUEL Skeuomorphic Gold Plaque */
-.developer-plaque {
-  background: var(--panel-bg);
-  box-shadow: var(--card-shadow);
-  border: 1px solid var(--border-rim);
-  border-radius: 35px;
-  padding: 0.7rem 1.8rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-top: 0.2rem;
-  position: relative;
-}
-
-.dev-label {
-  font-size: 0.85rem;
-  font-weight: 700;
+.footer-verse {
+  font-size: 0.95rem;
   color: var(--text-secondary);
-}
-
-.dev-name {
-  font-family: 'Cinzel', 'Cairo', serif;
-  font-size: 1.15rem;
-  font-weight: 900;
-  letter-spacing: 1.5px;
-  background: var(--gold-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
-}
-
-.dev-badge-icon {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: var(--gold-gradient);
-  color: #3b2005;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 900;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  font-weight: 600;
 }
 
 .footer-copyright {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
   font-weight: 600;
 }
 
 /* ===================================================================
-   LIGHTBOX MODAL FOR IMAGE INSPECTION
+   LIGHTBOX MODAL
    =================================================================== */
 .lightbox-modal {
   position: fixed;
@@ -1331,6 +1339,7 @@ body::before {
   width: 100%;
   height: 100%;
   background: rgba(10, 8, 12, 0.92);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   z-index: 9999;
   display: flex;
@@ -1392,43 +1401,94 @@ body::before {
    RESPONSIVE DESIGN BREAKPOINTS
    =================================================================== */
 @media (max-width: 768px) {
-  .header-inner {
-    flex-direction: row;
-    justify-content: space-between;
+  .skeuo-header {
+    padding: 0.5rem 0;
   }
-  
+
+  .header-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+  }
+
+  .header-brand {
+    gap: 0.6rem;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .brand-logo-frame {
+    height: 50px;
+    padding: 3px 8px;
+    border-radius: 12px;
+  }
+
+  .brand-logo {
+    height: 100%;
+  }
+
+  .footer-logo-frame {
+    height: 50px;
+    padding: 3px 8px;
+  }
+
+  .footer-logo {
+    height: 100%;
+  }
+
+  .brand-title-wrap {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .church-badge {
+    font-size: 0.65rem;
+    gap: 3px;
+    white-space: nowrap;
+  }
+
+  .church-title {
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.25;
+  }
+
   .church-subtitle {
     display: none;
   }
-  
-  .brand-logo-frame {
-    width: 48px;
-    height: 48px;
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
   }
-  
-  .church-title {
-    font-size: 1rem;
-  }
-  
+
   .nav-btn {
-    padding: 0.45rem 0.85rem;
-    font-size: 0.8rem;
+    padding: 0.4rem 0.7rem;
+    font-size: 0.78rem;
+    gap: 0.3rem;
+    white-space: nowrap;
   }
-  
+
   .theme-switch {
-    width: 66px;
-    height: 32px;
+    width: 62px;
+    height: 30px;
   }
-  
+
   .theme-switch-slider {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
   }
-  
+
   [data-theme="dark"] .theme-switch-slider {
-    transform: translateX(-34px);
+    transform: translateX(-32px);
   }
-  
+
   .cards-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -1469,5 +1529,48 @@ body::before {
   .bottom-nav-card .nav-direction-btn {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .header-inner {
+    gap: 0.35rem;
+  }
+
+  .header-brand {
+    gap: 0.4rem;
+  }
+
+  .brand-logo-frame {
+    height: 44px;
+    padding: 2px 6px;
+    border-radius: 10px;
+  }
+
+  .church-title {
+    font-size: 0.85rem;
+  }
+
+  .church-badge {
+    font-size: 0.58rem;
+  }
+
+  .nav-btn {
+    padding: 0.38rem 0.55rem;
+    font-size: 0.72rem;
+  }
+
+  .theme-switch {
+    width: 54px;
+    height: 26px;
+  }
+
+  .theme-switch-slider {
+    width: 20px;
+    height: 20px;
+  }
+
+  [data-theme="dark"] .theme-switch-slider {
+    transform: translateX(-28px);
   }
 }
