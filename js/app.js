@@ -164,6 +164,7 @@
         if (countBadge) {
           countBadge.textContent = `${visibleCount} قصة مختارة`;
         }
+        fitCardMeta();
       });
     });
   }
@@ -196,6 +197,63 @@
     });
   }
 
+  // --- 7. Dynamic Text Auto-Fitter for Card Meta (Never clip, auto-shrink when long) ---
+  function fitCardMeta() {
+    const metaRows = document.querySelectorAll('.card-meta');
+    metaRows.forEach(row => {
+      const bibleRef = row.querySelector('.card-bible-ref');
+      const eraBadge = row.querySelector('.card-era-badge');
+      if (!bibleRef || !eraBadge) return;
+
+      // Reset to default font sizes first
+      bibleRef.style.fontSize = '';
+      eraBadge.style.fontSize = '';
+
+      const availableWidth = row.clientWidth;
+      if (!availableWidth) return;
+
+      // Measure unconstrained content width
+      const bibleWidth = bibleRef.getBoundingClientRect().width;
+      const eraWidth = eraBadge.getBoundingClientRect().width;
+      const gap = 8;
+      const totalNeeded = bibleWidth + eraWidth + gap;
+
+      if (totalNeeded > availableWidth) {
+        // Calculate exact scaling ratio
+        const ratio = (availableWidth - gap) / (bibleWidth + eraWidth);
+        const baseRefPx = parseFloat(window.getComputedStyle(bibleRef).fontSize) || 13.1;
+        const baseBadgePx = parseFloat(window.getComputedStyle(eraBadge).fontSize) || 11.8;
+
+        let targetRef = Math.max(9.5, baseRefPx * ratio);
+        let targetBadge = Math.max(9, baseBadgePx * ratio);
+
+        bibleRef.style.fontSize = targetRef.toFixed(1) + 'px';
+        eraBadge.style.fontSize = targetBadge.toFixed(1) + 'px';
+
+        // Extra fine-tuning if subpixel rounding still exceeds
+        let passes = 6;
+        while ((bibleRef.getBoundingClientRect().width + eraBadge.getBoundingClientRect().width + gap) > availableWidth && passes > 0) {
+          targetRef -= 0.3;
+          targetBadge -= 0.3;
+          if (targetRef <= 9.5) break;
+          bibleRef.style.fontSize = targetRef.toFixed(1) + 'px';
+          eraBadge.style.fontSize = targetBadge.toFixed(1) + 'px';
+          passes--;
+        }
+      }
+    });
+  }
+
+  function initDynamicCardMeta() {
+    fitCardMeta();
+    window.addEventListener('resize', fitCardMeta);
+    window.addEventListener('load', fitCardMeta);
+    // Also re-run when fonts are loaded
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(fitCardMeta);
+    }
+  }
+
   // Run on DOM Ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
@@ -204,6 +262,7 @@
       initGalleryFilters();
       initTactileSounds();
       initKeyboardPaging();
+      initDynamicCardMeta();
     });
   } else {
     initTheme();
@@ -211,5 +270,6 @@
     initGalleryFilters();
     initTactileSounds();
     initKeyboardPaging();
+    initDynamicCardMeta();
   }
 })();

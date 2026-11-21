@@ -421,8 +421,9 @@ def generate_index():
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>كنيسة السيدة العذراء مريم بشبين الكوم | روائع القصص والتأملات الكتابية</title>
   <meta name="description" content="معرض لوحات وقصص وفيديوهات العهد القديم وتأملاتها الروحية مرتبة زمنياً - كنيسة السيدة العذراء مريم بشبين الكوم">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="favicon.png?v=3">
+  <link rel="shortcut icon" href="favicon.ico?v=3">
+  <link rel="apple-touch-icon" href="favicon.png?v=3">
   <link rel="stylesheet" href="css/skeuomorphic.css">
 </head>
 <body>
@@ -512,8 +513,9 @@ def generate_story_pages():
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{s['title']} | كنيسة العذراء مريم بشبين الكوم</title>
   <meta name="description" content="{s['summary']} - كنيسة السيدة العذراء مريم بشبين الكوم">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="favicon.png?v=3">
+  <link rel="shortcut icon" href="favicon.ico?v=3">
+  <link rel="apple-touch-icon" href="favicon.png?v=3">
   <link rel="stylesheet" href="css/skeuomorphic.css">
 </head>
 <body>
